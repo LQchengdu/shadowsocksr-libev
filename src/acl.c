@@ -120,7 +120,7 @@ static int
 init_firewall()
 {
     int ret = 0;
-    char cli[256];
+    char cli[512];
     FILE *fp;
 
     if (getuid() != 0)
@@ -170,7 +170,7 @@ static int
 reset_firewall()
 {
     int ret = 0;
-    char cli[256];
+    char cli[512];
 
     if (getuid() != 0)
         return -1;

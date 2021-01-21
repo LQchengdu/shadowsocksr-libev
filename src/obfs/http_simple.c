@@ -80,11 +80,11 @@ int http_simple_client_encode(obfs *self, char **pencryptdata, int datalength, s
     if (local->has_sent_header) {
         return datalength;
     }
-    char hosts[1024];
+    char hosts[512];
     char * phost[128];
     int host_num = 0;
     int pos;
-    char hostport[128];
+    char hostport[1024];
     int head_size = self->server.head_len + (int)(xorshift128plus() & 0x3F);
     int outlength;
     char * out_buffer = (char*)malloc((size_t)(datalength + 2048));
@@ -222,11 +222,11 @@ int http_post_client_encode(obfs *self, char **pencryptdata, int datalength, siz
     if (local->has_sent_header) {
         return datalength;
     }
-    char hosts[1024];
+    char hosts[512];
     char * phost[128];
     int host_num = 0;
     int pos;
-    char hostport[128];
+    char hostport[1024];
     int head_size = self->server.head_len + (int)(xorshift128plus() & 0x3F);
     int outlength;
     char * out_buffer = (char*)malloc((size_t)(datalength + 4096));
